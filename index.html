@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Template Vitrini | SKYZON DEVELOPMENT</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@500;700;800&family=Manrope:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <!-- SKYZON DEVELOPMENT: Ana vitrin kapsayicisi -->
+    <div class="gallery-shell">
+      <!-- SKYZON DEVELOPMENT: Ust kahraman alani -->
+      <header class="hero-panel">
+        <div class="hero-copy">
+          <p class="eyebrow">SKYZON DEVELOPMENT</p>
+          <h1>25 farklı template için canlı önizlemeli vitrin.</h1>
+          <p class="hero-text">
+            Aşağıdan istediğin template’i filtreleyebilir, canlı önizlemesini
+            görebilir ve doğrudan ilgili dosyaya geçebilirsin.
+          </p>
+        </div>
+
+        <div class="hero-stats">
+          <article>
+            <strong>25</strong>
+            <span>Toplam Template</span>
+          </article>
+          <article>
+            <strong>5</strong>
+            <span>Hacker Seti</span>
+          </article>
+          <article>
+            <strong>Canlı</strong>
+            <span>Iframe Önizleme</span>
+          </article>
+        </div>
+      </header>
+
+      <!-- SKYZON DEVELOPMENT: Kontrol paneli -->
+      <section class="controls-panel">
+        <div class="search-wrap">
+          <label for="searchInput">Ara</label>
+          <input
+            id="searchInput"
+            type="search"
+            placeholder="Örn: hacker, brutalist, template 12"
+          />
+        </div>
+
+        <div class="filter-wrap">
+          <p>Filtreler</p>
+          <div id="filterBar" class="filter-bar"></div>
+        </div>
+
+        <div class="summary-wrap">
+          <p>Gösterilen</p>
+          <strong id="resultCount">0 template</strong>
+        </div>
+      </section>
+
+      <!-- SKYZON DEVELOPMENT: Kart galerisi -->
+      <main>
+        <section class="grid-panel">
+          <div id="templateGrid" class="template-grid"></div>
+          <div id="emptyState" class="empty-state hidden">
+            <h2>Sonuç bulunamadı.</h2>
+            <p>Arama kelimesini değiştir veya filtreleri temizle.</p>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

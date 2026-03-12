@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Template 6 | İletişim</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&family=VT323&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- SKYZON DEVELOPMENT: Retro terminal kapsayicisi -->
+    <div class="terminal-shell">
+      <!-- SKYZON DEVELOPMENT: Ust terminal seridi -->
+      <header class="terminal-bar">
+        <a class="terminal-brand" href="index.html">template-06://retro</a>
+        <nav class="terminal-nav">
+          <a href="index.html">Anasayfa</a>
+          <a href="hakkimda.html">Hakkımda</a>
+          <a href="fotograflar.html">Fotoğraflar</a>
+          <a href="hobilerim.html">Hobilerim</a>
+          <a class="active" href="iletisim.html">İletişim</a>
+        </nav>
+      </header>
+      <main class="terminal-layout">
+        <!-- SKYZON DEVELOPMENT: Iletisim acilis alani -->
+        <section class="screen hero-screen compact-screen">
+          <p class="prompt">contact.open</p>
+          <h1>Mesaj bırakmak için terminal formu.</h1>
+          <p class="lead">Form ve bilgi alanı tamamen konsol estetiği ile çizildi.</p>
+        </section>
+        <!-- SKYZON DEVELOPMENT: Iletisim bloklari -->
+        <section class="screen wide-screen contact-screen">
+          <div class="contact-card">
+            <p class="prompt">channel.list</p>
+            <p>mail: merhaba@example.com</p>
+            <p>phone: +90 555 555 55 55</p>
+            <p>city: istanbul</p>
+            <p>social: @ornekhesap</p>
+          </div>
+          <form class="terminal-form">
+            <label for="isim">isim</label>
+            <input id="isim" type="text" placeholder="adinizi yazin" />
+            <label for="eposta">e-posta</label>
+            <input id="eposta" type="email" placeholder="ornek@mail.com" />
+            <label for="mesaj">mesaj</label>
+            <textarea id="mesaj" rows="5" placeholder="mesajinizi yazin"></textarea>
+            <button type="submit">send_packet</button>
+          </form>
+        </section>
+      </main>
+      <!-- SKYZON DEVELOPMENT: Alt terminal metni -->
+      <footer class="terminal-footer"><p>© 2026 Template 6 | SKYZON DEVELOPMENT</p></footer>
+    </div>
+  </body>
+</html>

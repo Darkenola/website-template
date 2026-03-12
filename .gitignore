@@ -1,0 +1,22 @@
+# SKYZON DEVELOPMENT: Operating system files
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# SKYZON DEVELOPMENT: Editor folders
+.vscode/
+.idea/
+
+# SKYZON DEVELOPMENT: Node and test tooling
+node_modules/
+playwright-report/
+test-results/
+*.log
+
+# SKYZON DEVELOPMENT: Python cache
+__pycache__/
+*.pyc
+
+# SKYZON DEVELOPMENT: Local archives and release assets
+*.zip
+release-assets/

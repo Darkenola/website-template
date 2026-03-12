@@ -1,0 +1,23 @@
+/* SKYZON DEVELOPMENT: Defter tema degiskenleri */
+:root { --bg:#f4efe2; --paper:#fffdf7; --ink:#28314b; --muted:#5f6d90; --line:#c6d7ff; --pin:#d95c5c; }
+/* SKYZON DEVELOPMENT: Temel ayarlar */
+*{box-sizing:border-box;margin:0;padding:0}
+body{min-height:100vh;font-family:"Patrick Hand",cursive;color:var(--ink);background:linear-gradient(180deg,#f8f3e8 0%,#efe8d8 100%)}
+.journal{width:min(1120px,calc(100% - 24px));margin:16px auto}
+.top,.paper,.foot,.grid a,.grid article,.photo,.card,.form{background:var(--paper);border:1px solid rgba(40,49,75,.12);box-shadow:0 14px 32px rgba(0,0,0,.08)}
+.top{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 18px;border-radius:20px}
+.brand{color:var(--ink);font-family:"Libre Baskerville",serif;font-size:clamp(1.5rem,3vw,2rem);text-decoration:none}
+.nav{display:flex;flex-wrap:wrap;gap:10px}.nav a{padding:8px 12px;border-radius:999px;color:var(--muted);text-decoration:none}.nav a.active,.nav a:hover{background:#e7eeff;color:var(--ink)}
+.stack{display:grid;gap:16px;margin-top:16px}.paper{padding:26px;border-radius:22px;position:relative;overflow:hidden;background-image:linear-gradient(transparent 31px,var(--line) 32px);background-size:100% 32px}
+.paper::before{content:"";position:absolute;top:0;bottom:0;left:36px;width:2px;background:#f1b7b7}.hero{min-height:220px}
+.tag{margin-bottom:10px;color:var(--pin);font-size:.95rem;letter-spacing:.08em}
+h1{font-family:"Libre Baskerville",serif;font-size:clamp(2.6rem,6vw,4.5rem);line-height:1.05;margin-bottom:14px}
+p{line-height:1.8}
+.grid,.gallery,.contact{display:grid;gap:14px}.grid.four{grid-template-columns:repeat(4,minmax(0,1fr))}.grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+.grid a,.grid article,.card,.form{padding:18px;border-radius:18px;color:inherit;text-decoration:none}.grid strong{display:inline-block;margin-bottom:8px;font-family:"Libre Baskerville",serif}
+.gallery{grid-template-columns:repeat(3,minmax(0,1fr))}.photo{position:relative;min-height:220px;border-radius:18px;overflow:hidden}.photo::before,.photo::after{content:"";position:absolute;inset:0}.photo::after{background:linear-gradient(to top,rgba(0,0,0,.35),transparent 56%)}.photo figcaption{position:absolute;right:14px;bottom:14px;left:14px;z-index:1;color:#fff}.a::before{background:linear-gradient(135deg,#fde2b6,#89b6ff)}.b::before{background:linear-gradient(135deg,#7a889f,#2e3b59)}.c::before{background:linear-gradient(135deg,#accd8f,#4f7756)}.d::before{background:linear-gradient(135deg,#ffd7d7,#e8ad8f)}.e::before{background:linear-gradient(135deg,#333843,#161821)}.f::before{background:linear-gradient(135deg,#d6ebff,#86c1ff)}
+.contact{grid-template-columns:.9fr 1.1fr}.form{display:grid;gap:10px}.form input,.form textarea{width:100%;padding:12px 14px;border:1px solid rgba(40,49,75,.16);border-radius:14px;font:inherit;background:#fff}.form textarea{resize:vertical}.form button{width:fit-content;padding:12px 16px;border:0;border-radius:999px;background:#2f67d8;color:#fff;font:inherit;cursor:pointer}
+.foot{margin-top:16px;padding:14px;border-radius:18px;text-align:center;color:var(--muted)}
+/* SKYZON DEVELOPMENT: Mobil uyumluluk */
+@media (max-width:980px){.grid.four,.grid.three,.gallery,.contact{grid-template-columns:1fr}}
+@media (max-width:720px){.top{flex-direction:column;align-items:flex-start}}

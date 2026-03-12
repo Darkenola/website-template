@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>İletişim | Kişisel Web Sitesi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Playfair+Display:wght@700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- SKYZON DEVELOPMENT: Sayfa kapsayici alani -->
+    <div class="page-shell">
+      <!-- SKYZON DEVELOPMENT: Ust gezinme alani -->
+      <header class="site-header">
+        <a class="brand" href="index.html">SKY<span>ZON</span></a>
+        <nav class="site-nav">
+          <a href="index.html">Anasayfa</a>
+          <a href="hakkimda.html">Hakkımda</a>
+          <a href="fotograflar.html">Fotoğraflar</a>
+          <a href="hobilerim.html">Hobilerim</a>
+          <a class="active" href="iletisim.html">İletişim</a>
+        </nav>
+      </header>
+
+      <!-- SKYZON DEVELOPMENT: Iletisim sayfa icerigi -->
+      <main class="page-main">
+        <!-- SKYZON DEVELOPMENT: Sayfa giris bolumu -->
+        <section class="page-hero">
+          <div>
+            <p class="eyebrow">İletişim</p>
+            <h1>Benimle bağlantı kurmak istersen buradayım.</h1>
+          </div>
+          <p class="page-hero-text">
+            Görüş, öneri veya iş birliği için aşağıdaki iletişim alanlarını
+            kullanabilirsin. Form örnek amaçlı hazırlanmıştır.
+          </p>
+        </section>
+
+        <!-- SKYZON DEVELOPMENT: Iletisim alanlari -->
+        <section class="content-section">
+          <div class="contact-layout">
+            <div class="contact-card">
+              <h3>İletişim Bilgileri</h3>
+              <p>E-posta: merhaba@example.com</p>
+              <p>Telefon: +90 555 555 55 55</p>
+              <p>Konum: İstanbul, Türkiye</p>
+              <p>Instagram: @kullaniciadi</p>
+            </div>
+
+            <form class="contact-form">
+              <label for="isim">İsim</label>
+              <input id="isim" type="text" placeholder="Adınızı yazın" />
+
+              <label for="eposta">E-posta</label>
+              <input id="eposta" type="email" placeholder="ornek@mail.com" />
+
+              <label for="mesaj">Mesaj</label>
+              <textarea
+                id="mesaj"
+                rows="5"
+                placeholder="Mesajınızı buraya yazın"
+              ></textarea>
+
+              <button type="submit">Mesaj Gönder</button>
+            </form>
+          </div>
+        </section>
+      </main>
+
+      <!-- SKYZON DEVELOPMENT: Alt bilgi alani -->
+      <footer class="site-footer">
+        <p>© 2026 Kişisel Web Sitesi | SKYZON DEVELOPMENT</p>
+      </footer>
+    </div>
+  </body>
+</html>

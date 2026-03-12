@@ -1,0 +1,598 @@
+/* SKYZON DEVELOPMENT: Genel degiskenler */
+:root {
+  --bg-main: #f5efe6;
+  --bg-soft: rgba(255, 250, 245, 0.7);
+  --text-main: #1e1a16;
+  --text-soft: #5b5147;
+  --accent: #b85c38;
+  --accent-dark: #7f2f1d;
+  --card: rgba(255, 255, 255, 0.62);
+  --border: rgba(104, 74, 52, 0.15);
+  --shadow: 0 24px 60px rgba(76, 43, 25, 0.14);
+}
+
+/* SKYZON DEVELOPMENT: Temel sifirlama */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* SKYZON DEVELOPMENT: Govde tasarimi */
+body {
+  min-height: 100vh;
+  font-family: "Manrope", sans-serif;
+  color: var(--text-main);
+  background:
+    radial-gradient(circle at top left, rgba(217, 163, 130, 0.35), transparent 28%),
+    radial-gradient(circle at 85% 20%, rgba(255, 220, 182, 0.45), transparent 24%),
+    linear-gradient(135deg, #f7f0e7 0%, #efe0ce 45%, #e9d0b7 100%);
+}
+
+/* SKYZON DEVELOPMENT: Arka plan desenleri */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.17) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.17) 1px, transparent 1px);
+  background-size: 38px 38px;
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.55), transparent 92%);
+  pointer-events: none;
+}
+
+/* SKYZON DEVELOPMENT: Sayfa kapsayici */
+.page-shell {
+  width: min(1180px, calc(100% - 32px));
+  margin: 24px auto;
+  padding: 24px;
+  border: 1px solid var(--border);
+  border-radius: 32px;
+  background: rgba(255, 248, 241, 0.55);
+  backdrop-filter: blur(18px);
+  box-shadow: var(--shadow);
+}
+
+/* SKYZON DEVELOPMENT: Ust menu */
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 12px 0 32px;
+}
+
+.brand {
+  color: var(--text-main);
+  font-family: "Playfair Display", serif;
+  font-size: clamp(1.6rem, 2vw, 2rem);
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+}
+
+.brand span {
+  color: var(--accent);
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.site-nav a {
+  padding: 10px 16px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  color: var(--text-soft);
+  font-weight: 700;
+  text-decoration: none;
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    background-color 0.25s ease;
+}
+
+.site-nav a:hover {
+  transform: translateY(-2px);
+  border-color: var(--border);
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.site-nav a.active {
+  border-color: rgba(104, 74, 52, 0.22);
+  color: var(--text-main);
+  background: rgba(255, 255, 255, 0.82);
+}
+
+/* SKYZON DEVELOPMENT: Ortak bolum yapisi */
+.content-section,
+.hero,
+.page-hero {
+  margin-bottom: 24px;
+  padding: clamp(24px, 5vw, 48px);
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  background: var(--bg-soft);
+}
+
+.page-main {
+  display: block;
+}
+
+.section-heading {
+  max-width: 700px;
+  margin-bottom: 28px;
+}
+
+.eyebrow {
+  margin-bottom: 12px;
+  color: var(--accent-dark);
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+h1,
+h2 {
+  font-family: "Playfair Display", serif;
+  line-height: 1.05;
+}
+
+h1 {
+  font-size: clamp(3rem, 8vw, 5.6rem);
+  margin-bottom: 18px;
+}
+
+h2 {
+  font-size: clamp(2rem, 5vw, 3.4rem);
+}
+
+h3 {
+  margin-bottom: 12px;
+  font-size: 1.25rem;
+}
+
+p {
+  line-height: 1.7;
+}
+
+/* SKYZON DEVELOPMENT: Hero alani */
+.hero {
+  display: grid;
+  grid-template-columns: 1.6fr 0.95fr;
+  gap: 24px;
+  align-items: stretch;
+  min-height: 68vh;
+  background:
+    linear-gradient(135deg, rgba(255, 247, 239, 0.88), rgba(250, 230, 211, 0.7)),
+    linear-gradient(120deg, rgba(184, 92, 56, 0.18), transparent 50%);
+}
+
+.page-hero {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 24px;
+  align-items: end;
+  background:
+    linear-gradient(145deg, rgba(255, 248, 240, 0.9), rgba(240, 220, 201, 0.72)),
+    linear-gradient(135deg, rgba(184, 92, 56, 0.14), transparent 55%);
+}
+
+.page-hero-text {
+  max-width: 480px;
+  color: var(--text-soft);
+  font-size: 1.02rem;
+}
+
+.hero-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-text {
+  max-width: 620px;
+  margin-bottom: 28px;
+  color: var(--text-soft);
+  font-size: 1.05rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 150px;
+  padding: 14px 22px;
+  border-radius: 999px;
+  font-weight: 800;
+  text-decoration: none;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background-color 0.25s ease;
+}
+
+.button:hover,
+.contact-form button:hover {
+  transform: translateY(-2px);
+}
+
+.button.primary,
+.contact-form button {
+  border: 0;
+  color: #fffaf5;
+  background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+  box-shadow: 0 16px 32px rgba(127, 47, 29, 0.2);
+}
+
+.button.secondary {
+  border: 1px solid var(--border);
+  color: var(--text-main);
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.hero-card,
+.info-card,
+.hobby-card,
+.contact-card,
+.contact-form,
+.photo-card {
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  background: var(--card);
+  box-shadow: 0 12px 28px rgba(120, 83, 58, 0.08);
+}
+
+.hero-card {
+  position: relative;
+  overflow: hidden;
+  padding: 28px;
+  align-self: end;
+}
+
+.hero-card::before {
+  content: "";
+  position: absolute;
+  inset: auto -40px -60px auto;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(184, 92, 56, 0.45), transparent 72%);
+}
+
+.card-label {
+  margin-bottom: 14px;
+  color: var(--accent-dark);
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.hero-card ul {
+  padding-left: 18px;
+  color: var(--text-soft);
+}
+
+.hero-card li + li {
+  margin-top: 12px;
+}
+
+/* SKYZON DEVELOPMENT: Ana sayfa onizleme kartlari */
+.preview-grid,
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.preview-card,
+.stat-card {
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  background: var(--card);
+  box-shadow: 0 12px 28px rgba(120, 83, 58, 0.08);
+}
+
+.preview-card {
+  display: block;
+  padding: 24px;
+  color: inherit;
+  text-decoration: none;
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    background-color 0.25s ease;
+}
+
+.preview-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(104, 74, 52, 0.28);
+  background: rgba(255, 255, 255, 0.78);
+}
+
+.preview-number {
+  margin-bottom: 14px;
+  color: var(--accent-dark);
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+
+.stat-card {
+  padding: 22px;
+}
+
+.stat-card strong {
+  display: inline-block;
+  margin-bottom: 10px;
+  font-size: 1.05rem;
+}
+
+/* SKYZON DEVELOPMENT: Hakkimda kartlari */
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.info-card {
+  padding: 24px;
+}
+
+.accent-card {
+  background: linear-gradient(160deg, rgba(184, 92, 56, 0.12), rgba(255, 255, 255, 0.72));
+}
+
+/* SKYZON DEVELOPMENT: Galeri alani */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.photo-card {
+  position: relative;
+  min-height: 340px;
+  overflow: hidden;
+}
+
+.photo-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.02);
+}
+
+.photo-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(16, 10, 8, 0.72), transparent 55%);
+}
+
+.photo-card figcaption {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1;
+  color: #fff8f2;
+  font-weight: 700;
+}
+
+.sunrise::before {
+  background-image:
+    radial-gradient(circle at 50% 30%, rgba(255, 213, 128, 0.9), transparent 18%),
+    linear-gradient(180deg, rgba(250, 190, 112, 0.9), rgba(107, 52, 37, 0.35)),
+    linear-gradient(160deg, #d07f58, #6f4131);
+}
+
+.city::before {
+  background-image:
+    linear-gradient(180deg, rgba(255, 214, 160, 0.3), transparent 40%),
+    linear-gradient(180deg, rgba(19, 31, 48, 0.1), rgba(14, 18, 28, 0.85)),
+    linear-gradient(135deg, #7d8ea3, #252f42);
+}
+
+.forest::before {
+  background-image:
+    linear-gradient(180deg, rgba(237, 240, 204, 0.22), transparent 50%),
+    linear-gradient(160deg, rgba(44, 83, 61, 0.86), rgba(15, 43, 35, 0.95)),
+    radial-gradient(circle at 50% 12%, rgba(245, 230, 155, 0.35), transparent 22%);
+}
+
+.coast::before {
+  background-image:
+    linear-gradient(180deg, rgba(255, 240, 198, 0.38), transparent 38%),
+    linear-gradient(180deg, rgba(89, 145, 174, 0.2), rgba(31, 90, 130, 0.84)),
+    linear-gradient(160deg, #7bc0d8, #245d8d);
+}
+
+.night::before {
+  background-image:
+    radial-gradient(circle at 58% 20%, rgba(255, 231, 180, 0.62), transparent 16%),
+    linear-gradient(180deg, rgba(26, 31, 53, 0.25), rgba(8, 11, 22, 0.92)),
+    linear-gradient(135deg, #4a5e7c, #161b31);
+}
+
+.desert::before {
+  background-image:
+    radial-gradient(circle at 42% 22%, rgba(255, 215, 149, 0.6), transparent 18%),
+    linear-gradient(180deg, rgba(221, 173, 103, 0.4), rgba(122, 76, 40, 0.88)),
+    linear-gradient(155deg, #dfa25b, #8a512d);
+}
+
+/* SKYZON DEVELOPMENT: Hobi kartlari */
+.hobby-list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.hobby-list-wide {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.hobby-card {
+  padding: 22px;
+}
+
+.hobby-card span {
+  display: inline-flex;
+  margin-bottom: 16px;
+  color: var(--accent-dark);
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+/* SKYZON DEVELOPMENT: Iletisim alani */
+.contact-layout {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 18px;
+}
+
+.contact-card,
+.contact-form {
+  padding: 24px;
+}
+
+.contact-card p + p {
+  margin-top: 10px;
+}
+
+.contact-form {
+  display: grid;
+  gap: 12px;
+}
+
+.contact-form label {
+  font-weight: 700;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid rgba(104, 74, 52, 0.16);
+  border-radius: 16px;
+  color: var(--text-main);
+  font: inherit;
+  background: rgba(255, 255, 255, 0.82);
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+.contact-form button {
+  width: fit-content;
+  margin-top: 8px;
+  padding: 14px 22px;
+  border-radius: 999px;
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+/* SKYZON DEVELOPMENT: Alt bilgi */
+.site-footer {
+  padding: 20px 8px 8px;
+  color: var(--text-soft);
+  text-align: center;
+}
+
+/* SKYZON DEVELOPMENT: Gecis animasyonlari */
+.hero,
+.content-section,
+.page-hero,
+.site-header,
+.site-footer {
+  animation: rise-in 0.7s ease both;
+}
+
+.about {
+  animation-delay: 0.08s;
+}
+
+.gallery {
+  animation-delay: 0.16s;
+}
+
+.hobbies {
+  animation-delay: 0.24s;
+}
+
+.contact {
+  animation-delay: 0.32s;
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* SKYZON DEVELOPMENT: Mobil uyumluluk */
+@media (max-width: 980px) {
+  .hero,
+  .page-hero,
+  .contact-layout,
+  .about-grid,
+  .gallery-grid,
+  .hobby-list,
+  .preview-grid,
+  .stat-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    min-height: auto;
+  }
+
+  .hero-card {
+    align-self: stretch;
+  }
+}
+
+@media (max-width: 720px) {
+  .page-shell {
+    width: min(100% - 20px, 100%);
+    margin: 10px auto;
+    padding: 18px;
+    border-radius: 24px;
+  }
+
+  .site-header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-bottom: 22px;
+  }
+
+  .site-nav {
+    gap: 10px;
+  }
+
+  .site-nav a {
+    padding: 9px 14px;
+  }
+}

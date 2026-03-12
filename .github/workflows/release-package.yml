@@ -1,0 +1,35 @@
+name: Build Release Package
+
+on:
+  # SKYZON DEVELOPMENT: Create a release asset whenever a version tag is pushed
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build zip package
+        shell: bash
+        run: |
+          mkdir -p dist
+          zip -r "dist/skyzon-template-vault-${GITHUB_REF_NAME}.zip" . \
+            -x ".git/*" \
+            -x "dist/*" \
+            -x "node_modules/*" \
+            -x "release-assets/*"
+
+      - name: Publish GitHub release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/skyzon-template-vault-${{ github.ref_name }}.zip
+          generate_release_notes: true
